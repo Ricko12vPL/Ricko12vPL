@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="118" viewBox="0 0 830 118" role="img" aria-label="Field tally — 39 roles in one research org, 256K tokens per SEC filing, 20 live agents with real IBKR execution, DOI-published method. Crossed paths: Mistral AI Hackathon 26, Anthropic x Cerebral Valley, JPL / ESA official feeds.">
+  <style>
+    .t{font-family:Georgia,'Times New Roman',serif}
+    .m{font-family:'Courier New',ui-monospace,Menlo,monospace}
+    @keyframes fi{from{opacity:0}to{opacity:1}}
+    .fi{animation:fi .8s ease both}
+    @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+  </style>
+  <rect x="1" y="1" width="828" height="116" rx="12" fill="#0d1109" stroke="#242d1d"/>
+  <g stroke="#242d1d" stroke-width="1.5">
+    <line x1="220" y1="24" x2="220" y2="80"/>
+    <line x1="424" y1="24" x2="424" y2="80"/>
+    <line x1="628" y1="24" x2="628" y2="80"/>
+  </g>
+  <g class="fi" style="animation-delay:.1s" text-anchor="middle">
+    <text class="t" x="118" y="52" font-size="30" font-weight="bold" fill="#d9a441">39</text>
+    <text class="m" x="118" y="70" font-size="9.5" letter-spacing="1.2" fill="#8f9678">ROLES IN ONE</text>
+    <text class="m" x="118" y="83" font-size="9.5" letter-spacing="1.2" fill="#6b7259">RESEARCH ORG</text>
+  </g>
+  <g class="fi" style="animation-delay:.25s" text-anchor="middle">
+    <text class="t" x="322" y="52" font-size="30" font-weight="bold" fill="#d9a441">256K</text>
+    <text class="m" x="322" y="70" font-size="9.5" letter-spacing="1.2" fill="#8f9678">TOKENS PER SEC FILING</text>
+    <text class="m" x="322" y="83" font-size="9.5" letter-spacing="1.2" fill="#6b7259">5-MODEL PIPELINE</text>
+  </g>
+  <g class="fi" style="animation-delay:.4s" text-anchor="middle">
+    <text class="t" x="526" y="52" font-size="30" font-weight="bold" fill="#d9a441">20</text>
+    <text class="m" x="526" y="70" font-size="9.5" letter-spacing="1.2" fill="#8f9678">LIVE AGENTS</text>
+    <text class="m" x="526" y="83" font-size="9.5" letter-spacing="1.2" fill="#6b7259">REAL IBKR EXECUTION</text>
+  </g>
+  <g class="fi" style="animation-delay:.55s" text-anchor="middle">
+    <text class="t" x="730" y="52" font-size="30" font-weight="bold" fill="#d9a441">DOI</text>
+    <text class="m" x="730" y="70" font-size="9.5" letter-spacing="1.2" fill="#8f9678">PUBLISHED METHOD</text>
+    <text class="m" x="730" y="83" font-size="9.5" letter-spacing="1.2" fill="#6b7259">ZENODO ARCHIVE</text>
+  </g>
+  <line x1="24" y1="94" x2="806" y2="94" stroke="#242d1d" stroke-width="1"/>
+  <text class="m fi" style="animation-delay:.8s" x="415" y="108" font-size="9.5" letter-spacing="1.2" text-anchor="middle" fill="#6b7259">CROSSED PATHS — MISTRAL AI HACKATHON ’26 · ANTHROPIC × CEREBRAL VALLEY · JPL / ESA OFFICIAL FEEDS</text>
+</svg>

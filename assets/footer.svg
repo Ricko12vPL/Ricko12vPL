@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="150" viewBox="0 0 830 150" role="img" aria-label="The map is never finished. Always glad to trade stories with frontier AI labs and quant / backend crews.">
+  <style>
+    .t{font-family:Georgia,'Times New Roman',serif}
+    .m{font-family:'Courier New',ui-monospace,Menlo,monospace}
+    @keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    @keyframes fi{from{opacity:0}to{opacity:1}}
+    .fu{animation:fu .9s cubic-bezier(.2,.7,.2,1) both}
+    .fi{animation:fi 1.2s ease both}
+    .route{stroke-dasharray:0.1 9.5;opacity:0;animation:fi 1.6s ease .5s forwards}
+    @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+  </style>
+  <rect x="1" y="1" width="828" height="148" rx="12" fill="#0d1109" stroke="#242d1d"/>
+  <g stroke="#d9a441" stroke-width="1.4" opacity=".4" fill="none">
+    <path d="M 14 30 L 14 14 L 30 14"/>
+    <path d="M 800 14 L 816 14 L 816 30"/>
+    <path d="M 816 120 L 816 136 L 800 136"/>
+    <path d="M 30 136 L 14 136 L 14 120"/>
+  </g>
+  <path class="route" d="M -6 118 C 90 102 150 132 250 116 C 350 100 420 128 520 110 C 610 102 690 128 774 108" fill="none" stroke="#3f4a33" stroke-width="2" stroke-linecap="round"/>
+  <g class="fi" style="animation-delay:1.6s" stroke="#d9a441" stroke-width="2.4" stroke-linecap="round" opacity=".75">
+    <line x1="770" y1="104" x2="780" y2="114"/>
+    <line x1="780" y1="104" x2="770" y2="114"/>
+  </g>
+  <path class="fi" d="M 415 24 L 420 30 L 415 36 L 410 30 Z" fill="#d9a441" opacity=".75"/>
+  <text class="t fu" style="animation-delay:.2s" x="415" y="72" font-size="24" font-style="italic" text-anchor="middle" fill="#e8dcc0">“The map is never finished.”</text>
+  <text class="m fu" style="animation-delay:.5s" x="415" y="100" font-size="10.5" letter-spacing="2" text-anchor="middle" fill="#78805f">ALWAYS GLAD TO TRADE STORIES — FRONTIER AI LABS · QUANT / BACKEND CREWS</text>
+</svg>

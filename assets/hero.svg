@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="450" viewBox="0 0 1000 450" role="img" aria-label="Hello, adventurer. The field journal of Kacper Saks — engineer, quant, stubborn cartographer of systems that must prove they work. Now accepting new expeditions.">
+  <defs>
+    <radialGradient id="vig" cx="40%" cy="36%" r="90%">
+      <stop offset="0%" stop-color="#141b10"/>
+      <stop offset="55%" stop-color="#0c110a"/>
+      <stop offset="100%" stop-color="#070a06"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2d08a"/>
+      <stop offset="55%" stop-color="#d9a441"/>
+      <stop offset="100%" stop-color="#a87423"/>
+    </linearGradient>
+    <radialGradient id="torch" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0b84d" stop-opacity="0.13"/>
+      <stop offset="55%" stop-color="#d9a441" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#d9a441" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="routeClip">
+      <rect id="routeRect" x="120" y="110" width="760" height="320"/>
+    </clipPath>
+  </defs>
+  <style>
+    .t{font-family:Georgia,'Times New Roman',serif}
+    .m{font-family:'Courier New',ui-monospace,Menlo,monospace}
+    @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    @keyframes fi{from{opacity:0}to{opacity:1}}
+    @keyframes flick{0%,100%{opacity:.5}42%{opacity:.74}50%{opacity:.56}62%{opacity:.8}78%{opacity:.62}}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.16);opacity:.72}}
+    @keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(4deg)}}
+    @keyframes fly{0%,100%{transform:translate(0,0);opacity:0}12%{opacity:.9}50%{transform:translate(7px,-11px);opacity:.3}72%{opacity:.85}}
+    @keyframes drawc{to{stroke-dashoffset:0}}
+    @keyframes blinkc{0%,45%{opacity:1}50%,100%{opacity:0}}
+    @keyframes growW{from{width:0px}to{width:760px}}
+    @keyframes stampin{0%{opacity:0;transform:scale(1.7)}60%{opacity:.9;transform:scale(.96)}100%{opacity:.85;transform:scale(1)}}
+    #routeRect{animation:growW 3s cubic-bezier(.4,0,.2,1) .9s both}
+    .fu{animation:fu .9s cubic-bezier(.2,.7,.2,1) both}
+    .fi{animation:fi 1s ease both}
+    .contour{stroke-dasharray:1200;stroke-dashoffset:1200;animation:drawc 2.8s ease-out forwards}
+    .torch{animation:flick 6s ease-in-out infinite}
+    .xmark{transform-box:fill-box;transform-origin:center;animation:pulse 3s ease-in-out infinite}
+    .needle{transform-box:fill-box;transform-origin:center;animation:sway 7s ease-in-out infinite}
+    .fly{transform-box:fill-box;transform-origin:center;animation:fly 5s ease-in-out infinite}
+    .caret{animation:blinkc 1.1s step-end infinite}
+    .stamp{transform-box:fill-box;transform-origin:center;animation:stampin .7s cubic-bezier(.2,1.4,.3,1) 4.4s both}
+    @media (prefers-reduced-motion:reduce){*{animation:none !important}}
+  </style>
+
+  <rect width="1000" height="450" fill="url(#vig)"/>
+
+  <g stroke="#b7c29a" stroke-width="1" opacity="0.045">
+    <line x1="100" y1="18" x2="100" y2="432"/><line x1="200" y1="18" x2="200" y2="432"/><line x1="300" y1="18" x2="300" y2="432"/><line x1="400" y1="18" x2="400" y2="432"/><line x1="500" y1="18" x2="500" y2="432"/><line x1="600" y1="18" x2="600" y2="432"/><line x1="700" y1="18" x2="700" y2="432"/><line x1="800" y1="18" x2="800" y2="432"/><line x1="900" y1="18" x2="900" y2="432"/>
+    <line x1="18" y1="100" x2="982" y2="100"/><line x1="18" y1="200" x2="982" y2="200"/><line x1="18" y1="300" x2="982" y2="300"/><line x1="18" y1="400" x2="982" y2="400"/>
+  </g>
+
+  <g fill="none" stroke="#26331f" stroke-width="1.1">
+    <path class="contour" style="animation-delay:.1s" opacity=".55" d="M -20 400 C 120 372 210 418 340 396 C 470 374 560 412 690 392 C 800 376 900 404 1020 386"/>
+    <path class="contour" style="animation-delay:.3s" opacity=".4" d="M -20 376 C 110 352 220 392 350 372 C 480 352 570 388 700 368 C 810 352 910 380 1020 362"/>
+    <path class="contour" style="animation-delay:.5s" opacity=".35" d="M 560 60 C 640 84 760 52 860 76 C 920 90 970 78 1020 88"/>
+    <path class="contour" style="animation-delay:.7s" opacity=".28" d="M 480 34 C 600 58 720 26 840 50 C 930 68 980 54 1020 62"/>
+  </g>
+
+  <g fill="none" stroke="#26331f" class="fi" style="animation-delay:1.6s">
+    <ellipse cx="838" cy="158" rx="22" ry="12" opacity=".5"/>
+    <ellipse cx="838" cy="158" rx="44" ry="26" opacity=".35"/>
+    <ellipse cx="838" cy="158" rx="64" ry="40" opacity=".22"/>
+    <ellipse cx="838" cy="158" rx="84" ry="52" opacity=".13"/>
+  </g>
+
+  <ellipse class="torch" cx="290" cy="200" rx="350" ry="210" fill="url(#torch)"/>
+
+  <g clip-path="url(#routeClip)">
+    <path d="M 140 392 C 230 386 290 374 356 371 C 420 368 452 384 512 372 C 576 358 584 308 654 294 C 704 284 716 312 768 298 C 812 286 812 240 830 202 C 836 188 838 178 838 172" fill="none" stroke="#e8dcc0" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 9.5" opacity=".85"/>
+  </g>
+
+  <g class="fi" style="animation-delay:1s">
+    <circle cx="140" cy="392" r="3.4" fill="#d9a441"/>
+    <circle cx="140" cy="392" r="7.5" fill="none" stroke="#d9a441" opacity=".35"/>
+    <text class="m" x="156" y="396" font-size="10" letter-spacing="1.5" fill="#8f9678">BASE CAMP</text>
+  </g>
+  <g class="fi" style="animation-delay:2s">
+    <g stroke="#d9a441" stroke-width="1.6" opacity=".65" stroke-linecap="round">
+      <line x1="494" y1="362" x2="506" y2="362"/><line x1="500" y1="357" x2="512" y2="357"/><line x1="497" y1="352" x2="505" y2="352"/>
+    </g>
+    <text class="m" x="520" y="386" font-size="10" letter-spacing="1.5" fill="#8f9678">MIRAGE FLATS</text>
+  </g>
+  <g class="fi" style="animation-delay:2.7s">
+    <g fill="#d9a441" opacity=".85">
+      <rect x="760" y="284" width="4.5" height="17" rx="1"/>
+      <rect x="771" y="281" width="4.5" height="20" rx="1"/>
+    </g>
+    <text class="m" x="770" y="324" text-anchor="end" font-size="10" letter-spacing="1.5" fill="#8f9678">THE EXECUTABLE GATES</text>
+  </g>
+
+  <g class="fi" style="animation-delay:3.6s">
+    <g class="xmark" filter="url(#soft)" stroke="url(#gold)" stroke-width="4" stroke-linecap="round">
+      <line x1="830" y1="150" x2="846" y2="166"/>
+      <line x1="846" y1="150" x2="830" y2="166"/>
+    </g>
+    <text class="m" x="858" y="156" font-size="11" letter-spacing="2" fill="#d9a441">THE PROOF</text>
+    <text class="m" x="858" y="171" font-size="9" letter-spacing="1.5" fill="#78805f">IT ACTUALLY WORKS</text>
+  </g>
+
+  <g class="fi" style="animation-delay:.6s">
+    <circle cx="908" cy="78" r="40" fill="none" stroke="#3a4430" stroke-width="1.2"/>
+    <circle cx="908" cy="78" r="37" fill="none" stroke="#3a4430" stroke-width="6" stroke-dasharray="1.5 17.87" opacity=".8"/>
+    <circle cx="908" cy="78" r="14" fill="none" stroke="#26331f"/>
+    <text class="t" x="908" y="57" font-size="11" text-anchor="middle" fill="#9aa07f">N</text>
+    <text class="t" x="933" y="82" font-size="11" text-anchor="middle" fill="#9aa07f">E</text>
+    <text class="t" x="908" y="107" font-size="11" text-anchor="middle" fill="#9aa07f">S</text>
+    <text class="t" x="883" y="82" font-size="11" text-anchor="middle" fill="#9aa07f">W</text>
+    <g transform="translate(908 78)">
+      <g class="needle">
+        <polygon points="0,-24 4.5,0 -4.5,0" fill="url(#gold)"/>
+        <polygon points="0,24 4.5,0 -4.5,0" fill="#4a523c"/>
+      </g>
+    </g>
+    <circle cx="908" cy="78" r="3.2" fill="#0d1109" stroke="#d9a441"/>
+    <text class="m" x="908" y="134" font-size="9" text-anchor="middle" letter-spacing="1.5" fill="#6b7259">TRUE NORTH: EVIDENCE</text>
+  </g>
+
+  <g fill="#ffd97a">
+    <circle class="fly" cx="168" cy="84" r="1.6"/>
+    <circle class="fly" style="animation-delay:1.4s" cx="262" cy="58" r="1.3"/>
+    <circle class="fly" style="animation-delay:2.6s" cx="688" cy="54" r="1.5"/>
+    <circle class="fly" style="animation-delay:.8s" cx="918" cy="318" r="1.5"/>
+    <circle class="fly" style="animation-delay:3.4s" cx="872" cy="368" r="1.2"/>
+    <circle class="fly" style="animation-delay:2s" cx="72" cy="262" r="1.4"/>
+  </g>
+
+  <text class="m fu" style="animation-delay:.2s" x="62" y="118" font-size="11" letter-spacing="3.5" fill="#d9a441" opacity=".9">THE FIELD JOURNAL OF KACPER SAKS</text>
+  <text class="t fu" style="animation-delay:.45s" x="58" y="180" font-size="60" font-weight="bold" letter-spacing="2" fill="url(#gold)">HELLO,</text>
+  <text class="t fu" style="animation-delay:.7s" x="58" y="242" font-size="60" font-weight="bold" letter-spacing="2" fill="url(#gold)">ADVENTURER.</text>
+  <line class="fi" style="animation-delay:1s" x1="60" y1="264" x2="330" y2="264" stroke="#d9a441" stroke-width="1" opacity=".3"/>
+  <text class="t fu" style="animation-delay:1.15s" x="60" y="296" font-size="16.5" font-style="italic" fill="#c4bb9e">engineer · quant · stubborn cartographer of</text>
+  <text class="t fu" style="animation-delay:1.3s" x="60" y="318" font-size="16.5" font-style="italic" fill="#c4bb9e">systems that must <tspan fill="#f2d08a">prove</tspan> they work.</text>
+  <g class="fi" style="animation-delay:2.5s">
+    <text class="m" x="62" y="348" font-size="12" letter-spacing="1" fill="#8f9678">Q · HOW DO YOU KNOW YOUR SYSTEM ACTUALLY WORKS?</text>
+    <rect class="caret" x="456" y="337" width="7" height="13" fill="#d9a441"/>
+  </g>
+
+  <g transform="translate(862 330) rotate(-7)">
+    <g class="stamp">
+      <rect x="-80" y="-27" width="160" height="54" rx="9" fill="none" stroke="#d9a441" stroke-width="1.8"/>
+      <rect x="-74" y="-21" width="148" height="42" rx="6" fill="none" stroke="#d9a441" stroke-width="0.8" opacity=".6"/>
+      <text class="m" x="0" y="-4" font-size="11.5" letter-spacing="2.5" text-anchor="middle" fill="#d9a441">NOW ACCEPTING</text>
+      <text class="m" x="0" y="13" font-size="11.5" letter-spacing="2.5" text-anchor="middle" fill="#d9a441">NEW EXPEDITIONS</text>
+    </g>
+  </g>
+
+  <rect x="18" y="18" width="964" height="414" fill="none" stroke="#d9a441" opacity=".14"/>
+  <g stroke="#d9a441" stroke-width="1.5" opacity=".5" fill="none">
+    <path d="M 18 36 L 18 18 L 36 18"/>
+    <path d="M 964 18 L 982 18 L 982 36"/>
+    <path d="M 982 414 L 982 432 L 964 432"/>
+    <path d="M 36 432 L 18 432 L 18 414"/>
+  </g>
+
+  <text class="m fi" style="animation-delay:1.8s" x="62" y="424" font-size="10" letter-spacing="1.5" fill="#6b7259">N 52°13′ · E 21°00′ — WARSAW BASE CAMP</text>
+  <text class="m fi" style="animation-delay:1.8s" x="938" y="424" font-size="10" letter-spacing="1.5" fill="#6b7259" text-anchor="end">PLATE № 001 — THE EXPEDITION LOG FOLLOWS</text>
+</svg>
