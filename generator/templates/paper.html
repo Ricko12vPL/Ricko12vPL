@@ -1,0 +1,31 @@
+<style>
+  .pp { display: flex; flex-direction: column; padding: 12px 16px; }
+  .pp-top { display: flex; justify-content: space-between; align-items: center; height: 16px; }
+  .pp-kind { font-size: 11px; letter-spacing: 0.04em; color: var(--accent); }
+  .pp-kind svg { width: 10px; height: 10px; }
+  .pp-date { font-size: 11px; color: var(--fg-3); font-variant-numeric: tabular-nums; }
+  .pp-title { margin-top: 10px; max-height: 57px; font-size: 13px; line-height: 19px; color: var(--fg); }
+  .pp-venue { margin-top: 6px; max-height: 17px; font-size: 11px; line-height: 17px; color: var(--fg-2); }
+  .pp-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: auto; }
+  .pp-authors { min-width: 0; font-size: 11px; color: var(--fg-3); }
+  .pp-right { display: inline-flex; flex: none; align-items: center; gap: 10px; }
+  .pp-arrow { color: var(--fg-3); font-size: 12px; }
+  .narrow .pp { padding: 16px 18px; }
+  .narrow .pp-top { height: 22px; }
+  .narrow .pp-kind, .narrow .pp-date, .narrow .pp-authors { font-size: 15px; }
+  .narrow .pp-kind svg { width: 12px; height: 12px; }
+  .narrow .pp-title { margin-top: 12px; max-height: 92px; font-size: 16px; line-height: 23px; }
+  .narrow .pp-venue { margin-top: 8px; max-height: 44px; font-size: 15px; line-height: 22px; }
+  .narrow .pp-arrow { font-size: 16px; }
+  .narrow .pp-foot, .narrow .pp-right { gap: 8px; }
+  .narrow .pp-foot .tag { letter-spacing: 0.04em; }
+  /* Without a venue line the title may take one more line. */
+  .pp.no-venue .pp-title { max-height: 76px; }
+  .narrow .pp.no-venue .pp-title { max-height: 115px; }
+</style>
+<div class="card ticks pp {{venueClass}}" style="height:{{height}}px">
+  <div class="pp-top"><span class="pp-kind">{{{glyph}}} {{kind}}</span><span class="pp-date">{{date}}</span></div>
+  <div class="pp-title" data-fit>{{title}}</div>
+  {{{venue}}}
+  <div class="pp-foot"><span class="pp-authors clamp-1">{{authors}}</span><span class="pp-right"><span class="tag">{{tag}}</span><span class="pp-arrow">→</span></span></div>
+</div>

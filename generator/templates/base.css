@@ -1,0 +1,262 @@
+/* Instrument primitives from kacpersaks.dev, re-tokened for GitHub's dark
+   (#0d1117) and light (#ffffff) page backgrounds. Known limit: the
+   prefers-color-scheme media query cannot tell GitHub's dark themes apart, so
+   on dark-dimmed (#22272e) the #050505 cards read darker than the page. */
+[data-theme='dark'] {
+  --bg: #050505;
+  --fg: #e5e5e5;
+  --fg-2: #a3a3a3;
+  --fg-3: #7a7a7a;
+  --fg-4: #525252;
+  --accent: #00ff41;
+  --accent-dim: #00cc33;
+  --accent-ink: #050505;
+  --hair: #1c1c1c;
+  --border: #222222;
+  --tick: rgba(0, 255, 65, 0.55);
+  --wire: #3a3f45;
+  --mark: rgba(0, 255, 65, 0.75);
+  --amber: #fbbf24;
+  --paused: #8c8c8c;
+  --archived: #6e6e6e;
+  --lv0: #2a2a2a;
+  --lv1: rgba(0, 255, 65, 0.3);
+  --lv2: rgba(0, 255, 65, 0.5);
+  --lv3: rgba(0, 255, 65, 0.74);
+  --lv4: #00ff41;
+  --caption: #a3a3a3;
+  --caption-strong: #d4d4d4;
+}
+
+[data-theme='light'] {
+  --bg: #fafafa;
+  --fg: #171717;
+  --fg-2: #525252;
+  --fg-3: #6b6b6b;
+  --fg-4: #a3a3a3;
+  --accent: #008a2e;
+  --accent-dim: #007a28;
+  --accent-ink: #ffffff;
+  /* #d4d4d4 keeps card edges visible on GitHub's #ffffff page. */
+  --hair: #e0e0e0;
+  --border: #d4d4d4;
+  --tick: rgba(0, 138, 46, 0.6);
+  --wire: #c4c9cf;
+  --mark: rgba(0, 138, 46, 0.8);
+  --amber: #b45309;
+  --paused: #6b6b6b;
+  --archived: #8a8a8a;
+  /* Solid tints of #008a2e over #fafafa: alpha over white washes out. */
+  --lv0: #d4d4d4;
+  --lv1: #8fcaa2;
+  --lv2: #5cb179;
+  --lv3: #2f9a53;
+  --lv4: #008a2e;
+  --caption: #525252;
+  --caption-strong: #171717;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+body {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--fg);
+  font-variant-ligatures: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pixel {
+  font-family: 'Geist Pixel Square', 'Geist Mono', monospace;
+  font-weight: 400;
+}
+
+/* ── frame: the transparent PNG canvas around a card ─────────────────── */
+.frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.slot {
+  position: absolute;
+}
+
+.wires {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: visible;
+}
+
+.wires .w {
+  fill: none;
+  stroke: var(--wire);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.wires .m {
+  fill: var(--mark);
+  shape-rendering: crispEdges;
+}
+
+/* ── panels ──────────────────────────────────────────────────────────── */
+.card {
+  position: relative;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* Corner ticks: four 6px L-marks, like a drawing frame. */
+.ticks {
+  background:
+    linear-gradient(var(--tick), var(--tick)) top left / 6px 1px,
+    linear-gradient(var(--tick), var(--tick)) top left / 1px 6px,
+    linear-gradient(var(--tick), var(--tick)) top right / 6px 1px,
+    linear-gradient(var(--tick), var(--tick)) top right / 1px 6px,
+    linear-gradient(var(--tick), var(--tick)) bottom left / 6px 1px,
+    linear-gradient(var(--tick), var(--tick)) bottom left / 1px 6px,
+    linear-gradient(var(--tick), var(--tick)) bottom right / 6px 1px,
+    linear-gradient(var(--tick), var(--tick)) bottom right / 1px 6px,
+    var(--bg);
+  background-repeat: no-repeat;
+}
+
+.label {
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.num {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.dim {
+  color: var(--fg-3);
+}
+
+.sep {
+  color: var(--fg-4);
+}
+
+.prompt-user {
+  color: var(--accent);
+}
+
+.prompt-path {
+  color: var(--fg-3);
+}
+
+.prompt-caret {
+  color: var(--accent-dim);
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.15em;
+  margin-left: 0.35em;
+  vertical-align: -0.2em;
+  background: var(--accent);
+}
+
+/* ── status glyphs (drawn as SVG: Geist Mono has no ◐ or ‖) ────────────── */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.status svg {
+  width: 10px;
+  height: 10px;
+  flex: none;
+}
+
+.status-completed {
+  color: var(--accent);
+}
+
+.status-in-progress {
+  color: var(--amber);
+}
+
+.status-paused {
+  color: var(--paused);
+}
+
+.status-archived {
+  color: var(--archived);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  color: var(--fg-2);
+  font-size: 11px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+}
+
+.clamp-1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Text boxes trimmed to whole words by the renderer (screenshot.mjs fitText):
+   each sets a max-height of whole lines; overflow drops trailing words. */
+[data-fit] {
+  overflow: hidden;
+}
+
+/* ── narrow layout (384 px, phones and tablets) ─────────────────────────
+   GitHub scales these images to the column (278 px at 360, 308 px at 390),
+   so 15 px text stays >= 10.9 px on screen. */
+.narrow {
+  font-size: 15px;
+}
+
+.narrow .label {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.narrow .status {
+  gap: 8px;
+  font-size: 15px;
+}
+
+.narrow .status svg {
+  width: 12px;
+  height: 12px;
+}
+
+.narrow .tag {
+  padding: 0 8px;
+  font-size: 15px;
+  line-height: 22px;
+}

@@ -1,0 +1,12 @@
+<style>
+  .cta { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-align: center; }
+  .cta-name { font-size: 14px; line-height: 20px; color: var(--accent); }
+  .cta-sub { font-size: 11px; line-height: 16px; color: var(--fg-2); }
+  .narrow .cta { gap: 6px; }
+  .narrow .cta-name { font-size: 18px; line-height: 26px; }
+  .narrow .cta-sub { font-size: 15px; line-height: 22px; }
+</style>
+<div class="card ticks cta" style="height:{{height}}px">
+  <div class="cta-name">{{name}} →</div>
+  <div class="cta-sub">{{sub}}</div>
+</div>

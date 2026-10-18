@@ -1,0 +1,21 @@
+<style>
+  .pc { display: flex; flex-direction: column; padding: 12px 14px; }
+  .pc-top { display: flex; justify-content: space-between; align-items: center; height: 16px; }
+  .pc-date { font-size: 11px; color: var(--fg-3); font-variant-numeric: tabular-nums; }
+  .pc-name { margin-top: 12px; font-size: 14px; line-height: 20px; color: var(--fg); }
+  .pc-desc { margin-top: 6px; max-height: 68px; font-size: 11px; line-height: 17px; color: var(--fg-2); }
+  .pc-foot { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+  .pc-arrow { color: var(--fg-3); font-size: 12px; }
+  .narrow .pc { padding: 16px 18px; }
+  .narrow .pc-top { height: 22px; }
+  .narrow .pc-date { font-size: 15px; }
+  .narrow .pc-name { margin-top: 14px; font-size: 18px; line-height: 26px; }
+  .narrow .pc-desc { margin-top: 8px; max-height: 88px; font-size: 15px; line-height: 22px; }
+  .narrow .pc-arrow { font-size: 16px; }
+</style>
+<div class="card ticks pc" style="height:{{height}}px">
+  <div class="pc-top">{{{badge}}}<span class="pc-date">{{date}}</span></div>
+  <div class="pc-name clamp-1">{{name}}</div>
+  <div class="pc-desc" data-fit>{{text}}</div>
+  <div class="pc-foot"><span class="tag">{{tag}}</span><span class="pc-arrow">{{arrow}}</span></div>
+</div>

@@ -1,0 +1,19 @@
+<style>
+  .lg-bar { display: flex; justify-content: space-between; padding: 10px 18px; border-bottom: 1px solid var(--hair); }
+  .lg-rows { margin: 0; padding: 10px 18px 0; list-style: none; }
+  .lg-rows li { display: flex; align-items: baseline; gap: 16px; height: 26px; font-size: 12.5px; line-height: 26px; }
+  .lg-rows time { flex: none; color: var(--fg-3); font-variant-numeric: tabular-nums; }
+  .lg-rows .t { min-width: 0; max-height: 26px; color: var(--fg); }
+  .lg-rows .old .t { color: var(--fg-3); }
+  .lg-rows .tag { flex: none; }
+  .narrow .lg-bar { padding: 10px 16px; }
+  .narrow .lg-rows { padding: 10px 16px 0; }
+  .narrow .lg-rows li { display: block; height: 80px; font-size: 15px; line-height: 22px; }
+  .narrow .lg-rows time { display: block; }
+  .narrow .lg-rows .t { display: block; margin-top: 2px; max-height: 44px; }
+  .narrow .lg-rows .tag { display: none; }
+</style>
+<div class="card ticks lg" style="height:{{height}}px">
+  <div class="lg-bar"><span class="label">~/blog · newest {{shown}}</span><span class="label">{{total}} posts</span></div>
+  <ol class="lg-rows">{{{rows}}}</ol>
+</div>

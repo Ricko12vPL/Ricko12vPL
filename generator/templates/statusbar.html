@@ -1,0 +1,27 @@
+<style>
+  .sb { display: flex; flex-wrap: wrap; align-items: stretch; height: 30px; font-size: 12px; line-height: 28px; }
+  .sb-mode { padding: 0 12px; background: var(--accent); color: var(--accent-ink); font-weight: 600; letter-spacing: 0.08em; }
+  .sb-path { padding: 0 12px; color: var(--fg-2); }
+  .sb-fill { flex: 1; }
+  .sb-seg { display: inline-flex; align-items: center; gap: 8px; padding: 0 12px; border-left: 1px solid var(--hair); }
+  .sb-seg .label { line-height: 28px; }
+  .sb.narrow { height: auto; font-size: 15px; line-height: 34px; }
+  .sb.narrow .sb-wide { display: none; }
+  .sb.narrow .sb-mode { padding: 0 12px; }
+  .sb.narrow .sb-counts { flex: 1 0 100%; gap: 8px; padding: 0 12px; border-left: 0; border-top: 1px solid var(--hair); }
+  .sb.narrow .sb-seg .label { line-height: 34px; }
+</style>
+<div class="card sb {{mode}}">
+  <span class="sb-mode">NORMAL</span>
+  <span class="sb-path">{{path}}</span>
+  <span class="sb-fill"></span>
+  <span class="sb-seg sb-wide"><span class="dim">Top</span></span>
+  <span class="sb-seg sb-counts">
+    <span class="label">projects</span> <span class="num">{{projects}}</span>
+    <span class="sep">·</span>
+    <span class="label">papers</span> <span class="num">{{papers}}</span>
+    <span class="sep">·</span>
+    <span class="label">posts</span> <span class="num">{{posts}}</span>
+  </span>
+  <span class="sb-seg sb-wide"><span class="label">utf-8</span></span>
+</div>

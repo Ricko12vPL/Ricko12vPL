@@ -1,0 +1,52 @@
+<style>
+  .f1 { padding: 18px 20px 20px; }
+  .f1-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+  .f1-grid { display: flex; gap: 8px; }
+  .f1-days { display: grid; grid-template-rows: repeat(7, 14px); width: 36px; }
+  .f1-days .label { line-height: 14px; font-size: 11px; letter-spacing: 0.1em; }
+  .f1-matrix { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, 14px); grid-template-columns: repeat({{weeks}}, {{cell}}px); font-size: 10.5px; line-height: 14px; text-align: center; }
+  .f1-matrix span { display: block; }
+  .l0 { color: var(--lv0); } .l1 { color: var(--lv1); } .l2 { color: var(--lv2); } .l3 { color: var(--lv3); } .l4 { color: var(--lv4); }
+  .f1-axis { position: relative; height: 16px; margin: 8px 0 0 44px; }
+  .f1-axis .label { position: absolute; top: 0; }
+  .f1-legend { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 11px; color: var(--fg-2); }
+  .f1-legend dl { display: flex; align-items: center; gap: 14px; margin: 0; }
+  .f1-legend dd { display: inline-flex; gap: 6px; margin: 0; font-variant-numeric: tabular-nums; }
+  .f1-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 18px 0 0; }
+  .f1-stat { border-top: 1px solid var(--hair); padding-top: 10px; }
+  .f1-stat dd { margin: 0; }
+  .f1-stat .v { margin-top: 6px; font-size: 20px; line-height: 1; }
+  .f1-stat .n { margin-top: 6px; font-size: 11px; color: var(--fg-2); }
+  .f1-cap { margin: 10px 2px 0; font-size: 11.5px; line-height: 1.5; color: var(--caption); }
+  .f1-cap b { font-weight: 400; color: var(--caption-strong); }
+  .f1.narrow { padding: 14px 12px 16px; }
+  .f1.narrow .f1-head { margin-bottom: 12px; }
+  .f1.narrow .f1-grid { gap: 6px; }
+  .f1.narrow .f1-days { grid-template-rows: repeat(7, 18px); width: 32px; }
+  .f1.narrow .f1-days .label { font-size: 15px; line-height: 18px; letter-spacing: 0.02em; }
+  .f1.narrow .f1-matrix { grid-template-rows: repeat(7, 18px); font-size: 15px; line-height: 18px; }
+  .f1.narrow .f1-axis { height: 22px; margin-left: 38px; }
+  .f1.narrow .f1-legend { flex-direction: column; align-items: flex-start; gap: 8px; font-size: 15px; }
+  .f1.narrow .f1-legend dl { flex-wrap: wrap; gap: 6px 14px; }
+  .f1.narrow .f1-stats { grid-template-columns: repeat(2, 1fr); gap: 16px 12px; }
+  .f1.narrow .f1-stat .v { font-size: 24px; }
+  .f1.narrow .f1-stat .n { font-size: 15px; }
+  .f1-cap.narrow { margin: 10px 2px 0; font-size: 15px; }
+</style>
+<div class="card ticks f1 {{mode}}">
+  <div class="f1-head">
+    <span class="label"><span class="accent">fig. 1</span> · {{headLeft}}</span>
+    <span class="label">{{range}}</span>
+  </div>
+  <div class="f1-grid">
+    <div class="f1-days"><span class="label" style="grid-row:2">mon</span><span class="label" style="grid-row:4">wed</span><span class="label" style="grid-row:6">fri</span></div>
+    <div class="f1-matrix">{{{cells}}}</div>
+  </div>
+  <div class="f1-axis">{{{ticks}}}</div>
+  <div class="f1-legend">
+    <dl><dt class="label">levels</dt>{{{legend}}}</dl>
+    <span class="dim">1 glyph = 1 day</span>
+  </div>
+  <dl class="f1-stats">{{{stats}}}</dl>
+</div>
+<p class="f1-cap {{mode}}"><b>fig. 1</b> — {{caption}}</p>

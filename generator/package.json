@@ -1,0 +1,21 @@
+{
+  "name": "ricko12vpl-profile-generator",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Renders the github.com/Ricko12vPL profile README cards from kacpersaks.dev/profile.json.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "render": "node render.mjs",
+    "render:fixture": "node render.mjs --data test/fixtures/profile.json --force",
+    "validate": "node render.mjs --validate-only",
+    "test": "node --test test/*.test.mjs",
+    "coverage": "node --test --experimental-test-coverage test/*.test.mjs"
+  },
+  "dependencies": {
+    "geist": "1.7.0",
+    "playwright": "1.63.0"
+  }
+}
